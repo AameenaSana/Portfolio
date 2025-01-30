@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  
   <div id="header">
     <nav>
       <!-- <img src="images/Sana_Logo.png" class="logo">-->
@@ -20,22 +21,89 @@
     </nav>
     <div class="header-text">
       <p>Web Developer</p>
-      <h1>Hi, I'm <span>Aameena Sana</h1>
-
+      <h1>Hi, I'm <span>Aameena Sana</span></h1>
     </div>
   </div>
-  <!---------------------ABOUT------------------------------>
+
+  <!---------------------ABOUT SECTION------------------------------>
   <div id="about">
     <div class="container">
       <div class="row">
-        <div class="about-call-1">
-          <img src="images/Sana_About.png" alt="">
-        </div>
         <div class="about-call-2">
-          <h1>About Me</h1>
+          <h1 class="sub-title">About Me</h1>
+          <p>
+            • Name: Aameena Sana M<br>
+            • Current Status: Second-year Computer Science student at Bangalore Institute of Technology, Bangalore, India<br>
+            • Passion: Coding with expertise in C, Python, and Java<br>
+            • Currently honing skills in Data Structures and Algorithms (DSA) in C++<br>
+            • Sports Enthusiast: Enjoys playing badminton and basketball<br>
+            • Loves exploring new places, travelling, and watching Netflix<br>
+            • Aims to study abroad in Sweden for master’s to grow both personally and professionally<br>
+            • Career Goal: Build a successful career in technology
+          </p>
         </div>
+      </div>
+      
+      <!------------------ TAB SECTION------------->
+      <div class="tab-titles">
+        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+        <p class="tab-links" onclick="opentab('education')">Education</p>
+      </div>
+      <div class="tab-contents active-tab" id="skills">
+        <ul>
+          <li><span>Web Development:</span><br>Designing basic web applications interfaces mostly front-end.</li>
+          <li><span>C:</span><br>Low-level programming, system programming, and understanding memory management.</li>
+          <li><span>Python:</span><br>Scripting, automation, data analysis, and quick problem-solving.</li>
+          <li><span>DSA:</span><br>Optimizing code efficiency, solving complex problems, and cracking coding interviews.</li>
+        </ul>
+      </div>
+      <div class="tab-contents" id="experience">
+        <ul>
+          <li><span>2025-Current</span><br>Machine Learning</li>
+          <li><span>2023-2024</span><br>Web Development</li>
+        </ul>
+      </div>
+      <div class="tab-contents" id="education">
+        <ul>
+          <li><span>2023-2027</span><br>Bangalore Institute of Technology, Bangalore</li>
+          <li><span>2021-2022</span><br>Sri Chaitanya PU College, Bangalore</li>
+          <li><span>2011-2020</span><br>KV DRDO, Bangalore</li>
+        </ul>
       </div>
     </div>
   </div>
+ 
+<!------------------SERVICES---------------------->
+
+<div id="services">
+  <div class="container">
+    <h1 class="sub-title">My Services</h1>
+    <div class="services-list">
+      <div>
+        <h2>Web Design</h2>
+        <p>Here are a few of my Web Projects</p>
+        <a href="#">learn more</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script> 
+  function opentab(tabname) {
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    for (let tablink of tablinks) {
+      tablink.classList.remove("active-link");
+    }
+    for (let tabcontent of tabcontents) {
+      tabcontent.classList.remove("active-tab");
+    }
+    document.getElementById(tabname).classList.add("active-tab");
+    event.currentTarget.classList.add("active-link");
+  }
+</script>
+
 </body>
 </html>
