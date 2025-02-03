@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Personal Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   
@@ -12,11 +13,11 @@
     <nav>
       <!-- <img src="images/Sana_Logo.png" class="logo">-->
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#header">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
     <div class="header-text">
@@ -38,8 +39,7 @@
             • Currently honing skills in Data Structures and Algorithms (DSA) in C++<br>
             • Sports Enthusiast: Enjoys playing badminton and basketball<br>
             • Loves exploring new places, travelling, and watching Netflix<br>
-            • Aims to study abroad in Sweden for master’s to grow both personally and professionally<br>
-            • Career Goal: Build a successful career in technology
+            • Aims to study abroad in Sweden for master’s to grow both personally and professionally
           </p>
         </div>
       </div>
@@ -82,7 +82,7 @@
     <div class="services-list">
       <div>
         <h2>Web Design</h2>
-        <p>Here are a few of my Web Projects</p>
+        <p>Here are all of my internships</p>
         <a href="#">learn more</a>
       </div>
 
@@ -103,6 +103,74 @@
     document.getElementById(tabname).classList.add("active-tab");
     event.currentTarget.classList.add("active-link");
   }
+</script>
+<!---------------PORTFOLIO-------------->
+<div id="portfolio">
+  <div class="container">
+    <h1 class="sub-title">My Work</h1>
+    <div class="work-list">
+      <div class="work">
+        <img src="images/work1.jpeg">
+        <div class="layer">
+          <h3>To-Do List</h3>
+          <p>This To-Do App is a simple and user-friendly task management tool designed to help you stay organized. It allows you to add tasks, delete tasks, and mark tasks as completed with a strikethrough effect. Perfect for managing daily errands, work tasks, or personal reminders, this app ensures you stay on top of your to-do list with ease.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- External Link Icon - NOW BELOW PORTFOLIO -->
+<div class="external-link">
+  <a href="https://to-do-list-flame-seven.vercel.app" target="_blank" rel="noopener noreferrer">
+    <i class="fa-solid fa-up-right-from-square"></i>
+  </a>
+</div>
+
+<!----------------------------CONTACTS------------>
+<div id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="contact-left">
+        <h1 class="sub-title">Contact Me</h1>
+        <p><i class="fa-solid fa-paper-plane"></i>aameenasana.work05@gmail.com</p>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/aameena-sana-m-3a4141290/"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://github.com/AameenaSana"><i class="fa-brands fa-square-github"></i></a>
+        </div>
+        <a href="images/Sana Resume.pdf" download class="btn btn2">Download CV</a>
+      </div>
+      <div class="contact-right">
+        <form name="submit-to-google-sheet">
+          <input type="text" name="Name" placeholder="Your Name" required>
+          <input type="email" name="Email" placeholder="Your Email" required>
+          <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+          <button type="submit" class="btn btn2">Submit</button>
+        </form>
+        <span id="msg"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzFoJYDeHjHjXTXHeg86poffPov5R0OFpZlbtGMapCR1mwVhKMFdHbFrIvfrds65Pi-sQ/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg= document.getElementById("msg")
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        msg.innerHTML= "Message sent successfully!"
+        setTimeout(function(){
+          msg.innerHTML=""
+
+        },5000)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
 </script>
 
 </body>
