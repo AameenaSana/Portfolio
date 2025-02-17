@@ -10,7 +10,10 @@
 <body>
   
   <div id="header">
+    
+
     <nav>
+      
       <!-- <img src="images/Sana_Logo.png" class="logo">-->
       <ul>
         <li><a href="#header">Home</a></li>
@@ -19,6 +22,10 @@
         <li><a href="#portfolio">Work</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <div id="views-counter">
+        <span id="count">0</span>
+      </div>
+      
     </nav>
     <div class="header-text">
       <p>Web Developer</p>
@@ -114,6 +121,11 @@
         <div class="layer">
           <h3>To-Do List</h3>
           <p>This To-Do App is a simple and user-friendly task management tool designed to help you stay organized. It allows you to add tasks, delete tasks, and mark tasks as completed with a strikethrough effect. Perfect for managing daily errands, work tasks, or personal reminders, this app ensures you stay on top of your to-do list with ease.</p>
+          <div class="external-link">
+  <a href="https://to-do-list-flame-seven.vercel.app" target="_blank" rel="noopener noreferrer">
+    <i class="fa-solid fa-up-right-from-square"></i>
+  </a>
+</div>
         </div>
       </div>
     </div>
@@ -121,11 +133,7 @@
 </div>
 
 <!-- External Link Icon - NOW BELOW PORTFOLIO -->
-<div class="external-link">
-  <a href="https://to-do-list-flame-seven.vercel.app" target="_blank" rel="noopener noreferrer">
-    <i class="fa-solid fa-up-right-from-square"></i>
-  </a>
-</div>
+
 
 <!----------------------------CONTACTS------------>
 <div id="contact">
@@ -171,6 +179,52 @@
       })
       .catch(error => console.error('Error!', error.message))
   })
+</script>
+<script type="module">
+  // Import Firebase modules
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getFirestore, doc, getDoc, setDoc, updateDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+  // Firebase Configuration
+  const firebaseConfig = {
+  apiKey: "AIzaSyAHTdhSeCcG6hgZqUNdbcpCLpE7H-X7v84",
+  authDomain: "sana-views.firebaseapp.com",
+  projectId: "sana-views",
+  storageBucket: "sana-views.firebasestorage.app",
+  messagingSenderId: "430350978640",
+  appId: "1:430350978640:web:a43eff69a0d5a9a93d4b55"
+};
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // Function to update and display the view count
+  async function updateCounter() {
+    const docRef = doc(db, "views", "counter"); // Firestore document reference
+
+    try {
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        let currentCount = docSnap.data().count || 0;
+
+        // Increment the count
+        await updateDoc(docRef, { count: currentCount + 1 });
+
+        // Update the UI
+        document.getElementById('count').textContent = currentCount + 1;
+      } else {
+        // Create the document if it doesn't exist
+        await setDoc(docRef, { count: 1 });
+        document.getElementById('count').textContent = 1;
+      }
+    } catch (error) {
+      console.error("Error updating counter:", error);
+    }
+  }
+
+  // Call function on page load
+  updateCounter();
 </script>
 
 </body>
