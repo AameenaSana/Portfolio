@@ -18,7 +18,7 @@ body {
 #header {
   width: 100%;
   height: 100vh;
-  background-image: url(images/Sana_Photo3.png);
+  background-image: url(images/Sana_pic.jpeg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top left;
@@ -266,9 +266,26 @@ nav ul li a:hover {
   bottom: 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; 
+  align-items: flex-start;
   padding: 20px;
   transition: height 0.5s;
+  
+  /* Enable scrolling inside */
+  max-height: 100%; /* Keep content within bounds */
+  overflow-y: auto; /* Allow vertical scrolling */
+  scrollbar-width: thin; /* Hide scrollbar in some browsers */
+  scrollbar-color: #76783d #989a57; /* Custom scrollbar colors */
+}
+.layer::-webkit-scrollbar-thumb {
+  background: #76783d;
+  border-radius: 5px;
+}
+
+.layer::-webkit-scrollbar-track {
+  background: #989a57;
+}
+.work:hover .layer {
+  height: 100%; /* Reveal content on hover */
 }
 .layer h3{
   font-weight: 500;
