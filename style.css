@@ -654,3 +654,94 @@ body {
     font-size: 0.9em;
   }
 }
+
+/*dark mode toggle*/
+
+body {
+  background-color: #ffffff;
+  color: #000000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark-mode a {
+  color: #ffffff; 
+}
+
+.dark-mode button {
+  background-color: #333;
+  color: white;
+  border: 1px solid white;
+}
+
+
+#dark-mode-toggle {
+  font-size: 24px; 
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  color: #000000; /* Default color in light mode */
+}
+.dark-mode-toggle a{
+  color: #000000;
+}
+/* Dark mode toggle button styles */
+body.dark-mode #dark-mode-toggle {
+  color: #ffffff; 
+}
+
+#dark-mode-toggle i {
+  font-size: 32px; 
+  transition: transform 0.3s ease-in-out;
+}
+
+#dark-mode-toggle:hover i {
+  transform: scale(1.2);
+}
+h1, h2, h3, h4, h5, h6 {
+  color: #76783d; 
+}
+
+/* Add these navigation-specific styles */
+nav {
+  background-color: #f8f9fa; /* Light gray background for navigation */
+  padding: 1rem;
+  border-bottom: 1px solid #dee2e6; /* Subtle border */
+}
+
+nav a {
+  color: #000000 !important; /* Force black text for navigation links */
+  margin: 0 15px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Existing styles with modifications */
+body {
+  background-color: #ffffff;
+  color: #000000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode Overrides */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode nav {
+  background-color: #1a1a1a; /* Darker navigation background */
+  
+}
+
+body.dark-mode nav a {
+  color: #ffffff !important;
+}
+
+/* Rest of your existing styles... */
