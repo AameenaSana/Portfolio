@@ -394,7 +394,6 @@ form input, form textarea {
   border-radius: 6px;
 }
 
-/* Mobile Responsiveness */
 @media (max-width: 768px) {
   
   .contact-container {
@@ -414,16 +413,16 @@ form input, form textarea {
 .btn.btn2 {
   display: inline-block;
   background: #989a57;
-  border: 2px solid #76783d; /* Added border */
-  padding: 10px 20px; /* Better padding */
-  border-radius: 6px; /* Matching form fields */
-  transition: all 0.3s; /* Smooth transition */
+  border: 2px solid #76783d; 
+  padding: 10px 20px; 
+  border-radius: 6px; 
+  transition: all 0.3s; 
 }
 
 .btn.btn2:hover {
-  background: #76783d; /* Darker background on hover */
-  border-color: #989a57; /* Border color change */
-  transform: translateY(-2px); /* Slight lift effect */
+  background: #76783d; 
+  border-color: #989a57; 
+  transform: translateY(-2px); 
 }
 #msg{
   color: #76783d;
