@@ -655,20 +655,59 @@ body {
   }
 }
 
-/*dark mode toggle*/
-
+/*dark mode toggle */
 body {
   background-color: #ffffff;
   color: #000000;
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Dark Mode Styles */
 body.dark-mode {
   background-color: #121212;
   color: #ffffff;
 }
 
+/* Header Text Colors */
+.header-text h1 {
+  color: #000000; /* Black in light mode */
+}
+
+body.dark-mode .header-text h1 {
+  color: #ffffff; /* White in dark mode */
+}
+
+.header-text h1 span {
+  color: #76783d; /* Olive color for spans */
+}
+
+/* Navigation Styles */
+nav {
+  background-color: transparent;
+  padding: 1rem;
+  border-bottom: none;
+}
+
+nav a {
+  color: #000000 !important;
+  margin: 0 15px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #76783d !important; /* Olive hover color */
+}
+
+/* Dark Mode Overrides */
+body.dark-mode nav a {
+  color: #ffffff !important;
+}
+
+body.dark-mode nav a:hover {
+  color: #76783d !important; /* Maintain olive hover in dark mode */
+}
+
+/* Dark Mode Component Styles */
 .dark-mode a {
   color: #ffffff; 
 }
@@ -679,19 +718,16 @@ body.dark-mode {
   border: 1px solid white;
 }
 
-
+/* Dark Mode Toggle Button */
 #dark-mode-toggle {
   font-size: 24px; 
   background: none;
   border: none;
   cursor: pointer;
   outline: none;
-  color: #000000; /* Default color in light mode */
-}
-.dark-mode-toggle a{
   color: #000000;
 }
-/* Dark mode toggle button styles */
+
 body.dark-mode #dark-mode-toggle {
   color: #ffffff; 
 }
@@ -704,44 +740,67 @@ body.dark-mode #dark-mode-toggle {
 #dark-mode-toggle:hover i {
   transform: scale(1.2);
 }
+
+/* Headings Color */
 h1, h2, h3, h4, h5, h6 {
   color: #76783d; 
 }
-
-/* Add these navigation-specific styles */
-nav {
-  background-color: #f8f9fa; /* Light gray background for navigation */
-  padding: 1rem;
-  border-bottom: 1px solid #dee2e6; /* Subtle border */
+/* About Me section styles */
+.about-call-2 .sub-title {
+  color: #76783d !important; 
 }
 
-nav a {
-  color: #000000 !important; /* Force black text for navigation links */
-  margin: 0 15px;
-  text-decoration: none;
-  transition: color 0.3s ease;
+.about-call-2 p {
+  color: #000000; 
 }
 
-/* Existing styles with modifications */
-body {
-  background-color: #ffffff;
+body.dark-mode .about-call-2 p {
+  color: #ffffff; 
+}
+body.dark-mode .tab-titles p{
   color: #000000;
-  transition: background-color 0.3s, color 0.3s;
+}
+.tab-titles p{
+  color: #ffffff;
+}
+/* Tab Section Styles */
+.tab-links,
+.tab-contents {
+  color: #000000; /* Black text in light mode */
+}
+
+.tab-contents span {
+  color: #76783d; /* Olive color for span elements */
 }
 
 /* Dark Mode Overrides */
-body.dark-mode {
-  background-color: #121212;
-  color: #ffffff;
+body.dark-mode .tab-links,
+body.dark-mode .tab-contents {
+  color: #ffffff; /* White text in dark mode */
 }
 
-body.dark-mode nav {
-  background-color: #1a1a1a; /* Darker navigation background */
-  
+body.dark-mode .tab-contents span {
+  color: #76783d; /* Maintain olive color for spans in dark mode */
 }
 
-body.dark-mode nav a {
-  color: #ffffff !important;
+/* Tab headings color */
+.tab-links {
+  color: #000000 !important; /* Black in light mode */
+  transition: color 0.3s ease; /* Smooth transition */
 }
 
-/* Rest of your existing styles... */
+/* Dark mode override */
+body.dark-mode .tab-links {
+  color: #ffffff !important; /* White in dark mode */
+}
+
+/* Line above tabs */
+.tab-titles {
+  border-top: 2px solid #000000 !important; /* Black line in light mode */
+  transition: border-color 0.3s ease; /* Smooth transition */
+}
+
+/* Dark mode override */
+body.dark-mode .tab-titles {
+  border-top: 2px solid #ffffff !important; /* White line in dark mode */
+}
