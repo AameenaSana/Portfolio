@@ -430,9 +430,8 @@ form input, form textarea {
   margin-top: 10px;
   display: block;
 }
-/* Mobile Responsiveness - Unified Media Queries */
 @media (max-width: 768px) {
-  /* Header Image Preservation */
+  
   #header {
     background-size: contain;
     background-position: left ;
@@ -441,7 +440,6 @@ form input, form textarea {
     min-height: 100vh;
   }
 
-  /* Skills/Experience Tab Layout */
   .tab-titles {
     display: flex;
     flex-wrap: nowrap;
@@ -457,7 +455,7 @@ form input, form textarea {
     white-space: nowrap;
   }
 
-  /* About Section Layout */
+
   .row {
     flex-direction: column;
     gap: 30px;
@@ -468,14 +466,14 @@ form input, form textarea {
     margin: 0 auto;
   }
 
-  /* Contact Section */
+  
   .contact-container {
     gap: 20px;
   }
 }
 
 @media (max-width: 480px) {
-  /* Tab Links Optimization */
+
   .tab-titles {
     gap: 10px;
   }
@@ -485,7 +483,7 @@ form input, form textarea {
     padding: 0 8px;
   }
 
-  /* Header Text Adjustment */
+
   .header-text h1 {
     font-size: 28px;
   }
