@@ -824,12 +824,12 @@ body.dark-mode .tab-titles {
   margin: 80px 0; 
 }
 
-/* Light Mode (default) */
+
 .github-activity {
   filter: invert(0);
 }
 
-/* Dark Mode */
+
 .dark-mode .github-activity {
   filter: invert(1) hue-rotate(180deg);
 }

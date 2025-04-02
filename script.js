@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const body = document.body;
     const icon = toggleButton.querySelector("i");
 
-    // Check for saved theme in localStorage
+    
     if (localStorage.getItem("theme") === "dark") {
         enableDarkMode();
     }
@@ -19,20 +19,20 @@ document.addEventListener("DOMContentLoaded", () => {
     function enableDarkMode() {
         body.classList.add("dark-mode");
         localStorage.setItem("theme", "dark");
-        icon.classList.replace("fa-moon", "fa-sun"); // Switch to sun icon
+        icon.classList.replace("fa-moon", "fa-sun"); 
     }
 
     function disableDarkMode() {
         body.classList.remove("dark-mode");
         localStorage.setItem("theme", "light");
-        icon.classList.replace("fa-sun", "fa-moon"); // Switch back to moon icon
+        icon.classList.replace("fa-sun", "fa-moon"); 
     }
 });
 
 
 //LATEST REPOS
 
-const imgElement = document.querySelector(".github-activity"); // Use class instead of id
+const imgElement = document.querySelector(".github-activity"); 
 const toggleButton = document.querySelector("#theme-toggle");
 
 toggleButton.addEventListener("click", () => {
