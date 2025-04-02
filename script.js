@@ -32,32 +32,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //LATEST REPOS
 
-async function fetchGitHubRepos() {
-    const username = "AameenaSana";  // Replace with your GitHub username
-    const repoUrl = `https://api.github.com/users/${AameenaSana}/repos?sort=updated&per_page=6`;
+const imgElement = document.querySelector(".github-activity"); // Use class instead of id
+const toggleButton = document.querySelector("#theme-toggle");
 
-    try {
-        const response = await fetch(repoUrl);
-        const repos = await response.json();
-
-        let repoHTML = "";
-        repos.forEach(repo => {
-            repoHTML += `
-                <div class="repo-item">
-                    <h3>${repo.name}</h3>
-                    <p>${repo.description ? repo.description : "No description available."}</p>
-                    <a href="${repo.html_url}" target="_blank">View on GitHub</a>
-                </div>
-            `;
-        });
-
-        document.querySelector(".repos-list").innerHTML = repoHTML;
-
-    } catch (error) {
-        console.error("Error fetching repositories:", error);
-        document.querySelector(".repos-list").innerHTML = "<p>Failed to load repositories.</p>";
+toggleButton.addEventListener("click", () => {
+    if (document.body.classList.toggle("dark-mode")) {
+        imgElement.src = "https://github-contributions-api.deno.dev/AameenaSana.svg?theme=dark";
+    } else {
+        imgElement.src = "https://github-contributions-api.deno.dev/AameenaSana.svg?theme=light";
     }
-}
-
-// Call the function on page load
-fetchGitHubRepos();
+});
