@@ -803,7 +803,7 @@ body.dark-mode .tab-titles {
 
 /*MY GITHUB ACTIVITY*/
 
-/* Ensuring proper alignment */
+
 .repos-list {
   position: relative;
   left: -42px;
@@ -818,8 +818,8 @@ body.dark-mode .tab-titles {
 
 
 .repos-list img {
-  width: 100%; /* Make sure the image is responsive */
-  max-width: 800px; /* Set a max width */
-  display: block; /* Prevent inline spacing */
-  margin: 80px 0; /* Add space above and below */
+  width: 100%; 
+  max-width: 800px; 
+  display: block; 
+  margin: 80px 0; 
 }
