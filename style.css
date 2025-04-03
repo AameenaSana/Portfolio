@@ -833,3 +833,5 @@ body.dark-mode .tab-titles {
 .dark-mode .github-activity {
   filter: invert(1) hue-rotate(180deg);
 }
+
+/* Projects Filter – Categorize projects (Web Dev, AI, etc.) and add a filtering option. */
