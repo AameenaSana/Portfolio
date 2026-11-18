@@ -143,6 +143,18 @@ form textarea { resize: vertical; }
 form button { justify-self: start; }
 .footer { border-top: 1px solid var(--line); color: var(--muted); }
 
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  :where(.card, .timeline article, .skills-grid > div, .credentials > div, .activity-link, .contact > div) {
+    border-radius: .75rem;
+    transition: translate .2s ease, box-shadow .2s ease;
+  }
+
+  :is(.card, .timeline article, .skills-grid > div, .credentials > div, .activity-link, .contact > div):hover {
+    translate: 0 -.35rem;
+    box-shadow: 0 .6rem 1.5rem -.5rem rgb(0 0 0 / .28);
+  }
+}
+
 @media (max-width: 46rem) {
   .hero, .project-grid, .credentials, .contact { grid-template-columns: 1fr; }
   .portrait { max-width: 22rem; }
