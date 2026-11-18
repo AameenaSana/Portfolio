@@ -163,7 +163,19 @@ main > section + section { border-top: 1px solid var(--line); padding-block: cla
 .dark-mode .level-2 { background: #006d32; }
 .dark-mode .level-3 { background: #26a641; }
 .dark-mode .level-4 { background: #39d353; }
-.email { overflow-wrap: anywhere; }
+.contact-links { display: flex; flex-wrap: wrap; gap: .75rem; }
+.contact-links a {
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 1px solid var(--line);
+  border-radius: .75rem;
+  background: var(--surface);
+  color: var(--ink);
+}
+.contact-links a:hover { border-color: var(--accent); }
+.contact-links svg { width: 1.65rem; height: 1.65rem; }
 form { display: grid; gap: .4rem; }
 form input, form textarea { width: 100%; margin-bottom: .55rem; padding: .65rem .75rem; border: 1px solid var(--line); border-radius: .5rem; background: var(--surface); color: var(--ink); }
 form textarea { resize: vertical; }
