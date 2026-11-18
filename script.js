@@ -1,44 +1,27 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const toggleButton = document.getElementById("dark-mode-toggle");
-    const body = document.body;
-    const icon = toggleButton.querySelector("i");
+﻿const toggleButton = document.getElementById("dark-mode-toggle");
 
-    
-    if (localStorage.getItem("theme") === "dark") {
-        enableDarkMode();
-    }
+function applyTheme(isDark) {
+    document.body.classList.toggle("dark-mode", isDark);
+    toggleButton.setAttribute("aria-pressed", String(isDark));
+    activityChart.setAttribute("src", isDark ? activityUrl + "?theme=dark" : activityUrl);
+}
 
-    toggleButton.addEventListener("click", () => {
-        if (body.classList.contains("dark-mode")) {
-            disableDarkMode();
-        } else {
-            enableDarkMode();
-        }
-    });
+const activityChart = document.querySelector(".github-activity");
+const activityUrl = activityChart.getAttribute("src");
 
-    function enableDarkMode() {
-        body.classList.add("dark-mode");
-        localStorage.setItem("theme", "dark");
-        icon.classList.replace("fa-moon", "fa-sun"); 
-    }
+try {
+    applyTheme(localStorage.getItem("theme") === "dark");
+} catch {
+    applyTheme(false);
+}
 
-    function disableDarkMode() {
-        body.classList.remove("dark-mode");
-        localStorage.setItem("theme", "light");
-        icon.classList.replace("fa-sun", "fa-moon"); 
-    }
-});
-
-
-//LATEST REPOS
-
-const imgElement = document.querySelector(".github-activity"); 
-const toggleButton = document.querySelector("#theme-toggle");
-
+toggleButton.hidden = false;
 toggleButton.addEventListener("click", () => {
-    if (document.body.classList.toggle("dark-mode")) {
-        imgElement.src = "https://github-contributions-api.deno.dev/AameenaSana.svg?theme=dark";
-    } else {
-        imgElement.src = "https://github-contributions-api.deno.dev/AameenaSana.svg?theme=light";
+    const isDark = !document.body.classList.contains("dark-mode");
+    applyTheme(isDark);
+    try {
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+    } catch {
+        // The theme remains active for this page when storage is unavailable.
     }
 });

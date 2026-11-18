@@ -1,214 +1,177 @@
-<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Portfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Aameena Sana M, software developer in Bengaluru. Explore my work in Java, distributed systems, and full-stack development.">
+  <title>Aameena Sana M | Software Developer</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
-  
-  <div id="header">
-    
-
-    <nav>
-      
-      <!-- <img src="images/Sana_Logo.png" class="logo">-->
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="header">
+    <nav class="wrap nav" aria-label="Main navigation">
+      <a class="brand" href="#header">Aameena Sana</a>
       <ul>
-        <button id="dark-mode-toggle">
-          <i class="fa-solid fa-moon"></i>
-      </button>
-      
-        <li><a href="#header">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#repos">GitHub Activity</a></li>
-        <li><a href="#portfolio">Work</a></li>
+        <li><a href="#portfolio">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
-        
       </ul>
-      <div id="views-counter">
-        <span id="count">0</span>
-      </div>
-      
+      <button id="dark-mode-toggle" type="button" aria-label="Dark theme" aria-pressed="false" hidden>Dark mode</button>
     </nav>
-    <div class="header-text">
-      <p>Web Developer</p>
-      <h1>Hi, I'm <span>Aameena Sana M</span></h1>
-    </div>
-  </div>
+  </header>
 
-  <!---------------------ABOUT SECTION------------------------------>
-  <div id="about">
-    <div class="container">
-      <div class="row">
-        <div class="about-call-2">
-          <h1 class="sub-title">About Me</h1>
-          <p>
-            • Name: Aameena Sana M<br>
-            • Current Status: Second-year Computer Science student at Bangalore Institute of Technology, Bangalore, India<br>
-            • Passion: Coding with expertise in C, Python, and Java<br>
-            • Currently honing skills in Data Structures and Algorithms (DSA) in C++<br>
-            • Sports Enthusiast: Enjoys playing badminton and basketball<br>
-            • Loves exploring new places, travelling, and watching Netflix<br>
-            • Aims to study abroad in Sweden for master’s to grow both personally and professionally
-          </p>
-        </div>
-      </div>
-      
-      <!------------------ TAB SECTION------------->
-      <div class="tab-titles">
-        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-        <p class="tab-links" onclick="opentab('experience')">Experience</p>
-        <p class="tab-links" onclick="opentab('education')">Education</p>
-    
-      </div>
-      <div class="tab-contents active-tab" id="skills">
-        <ul>
-          <li><span>Web Development:</span><br>Designing basic web applications interfaces mostly front-end.</li>
-          <li><span>React:</span><br>used React to build dynamic, responsive web applications, including a personal portfolio and a to-do app, leveraging components, hooks, and state management for efficient development.</li>
-          <li><span>C:</span><br>Low-level programming, system programming, and understanding memory management.</li>
-          <li><span>Python:</span><br>Scripting, automation, data analysis, and quick problem-solving.</li>
-          <li><span>DSA:</span><br>Optimizing code efficiency, solving complex problems, and cracking coding interviews.</li>
-        </ul>
-      </div>
-      <div class="tab-contents" id="experience">
-        <ul>
-          <li><span>2025-Current</span><br>Machine Learning</li>
-          <li><span>2023-2024</span><br>Web Development</li>
-        </ul>
-      </div>
-      <div class="tab-contents" id="education">
-        <ul>
-          <li><span>2023-2027</span><br>Bangalore Institute of Technology, Bangalore</li>
-          <li><span>2021-2022</span><br>Sri Chaitanya PU College, Bangalore</li>
-          <li><span>2011-2020</span><br>KV DRDO, Bangalore</li>
-        </ul>
-      </div>
-    </div>
-  </div>
- 
-<!------------------SERVICES---------------------->
-
-<div id="services">
-  <div class="container">
-    <h1 class="sub-title">My Services</h1>
-    <div class="services-list">
+  <main id="main" class="wrap">
+    <section class="hero" aria-labelledby="intro">
       <div>
-        <h2>Web Design</h2>
-        <p>Here are all of my internships</p>
-        <a href="#">learn more</a>
-      </div>
-
-    </div>
-  </div>
-</div>
-<script> 
-  function opentab(tabname) {
-    var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
-
-    for (let tablink of tablinks) {
-      tablink.classList.remove("active-link");
-    }
-    for (let tabcontent of tabcontents) {
-      tabcontent.classList.remove("active-tab");
-    }
-    document.getElementById(tabname).classList.add("active-tab");
-    event.currentTarget.classList.add("active-link");
-  }
-</script>
-
-<!----------------------GITHUB ACTIVITY----------->
-
-<div id="repos">
-  <div class="container">
-    <div class="row">
-      <div class="repos-list">
-        <h1 class="sub-title">My GitHub Activity</h1>
-        <img src="https://github-contributions-api.deno.dev/AameenaSana.svg" 
-        alt="GitHub Contributions" 
-        class="github-activity">
-   
-      </div>
-    </div>
-</div>
-</div>
-<!---------------WORKS-------------->
-<div id="portfolio">
-  <div class="container">
-    <h1 class="sub-title">My Work</h1>
-    <div class="work-list">
-      <div class="work">
-        <img src="images/work1.jpeg">
-        <div class="layer">
-          <h3>To-Do List</h3>
-          <p>This To-Do App is a powerful yet simple task management tool designed to keep you organized and efficient. Easily add, delete, and mark tasks as completed with a strikethrough effect. With new features like one-click task clearance, timers with alarms to keep you on track, and a speech-to-text input for hands-free task creation, managing your to-do list has never been easier. Whether it’s daily errands, work assignments, or personal reminders, this app helps you stay productive with ease and convenience.</p>          
-          <div class="external-link">
-  <a href="https://to-do-list-flame-seven.vercel.app" target="_blank" rel="noopener noreferrer">
-    <i class="fa-solid fa-up-right-from-square"></i>
-  </a>
-</div>
+        <p class="eyebrow">Software Developer · Bengaluru, India</p>
+        <h1 id="intro">Aameena<br>Sana M</h1>
+        <p class="intro">I build backend and full-stack software, from an SEC filing research platform to a distributed object store that recovers from node failures. I study Computer Science and Engineering at Bangalore Institute of Technology.</p>
+        <div class="actions">
+          <a class="button primary" href="#portfolio">Explore projects</a>
+          <a class="button" href="images/Sana_Resume_Nov.pdf" download>Download resume</a>
         </div>
       </div>
-      <div class="work">
-        <img src="images/work2.jpeg">
-        <div class="layer">
-          <h3>Expense Tracker</h3>
-          <p>This MERN stack Expense Tracker is a smart financial management tool that helps users track their total income, expenses, and balance in real time. It provides a detailed transaction history where each expense can be categorized (e.g., "Food," "Rent," "Shopping"), making budgeting easier. The app features interactive graphs to visualize spending patterns and income trends over time. Built with MongoDB, Express.js, React, and Node.js, it ensures secure data storage and a smooth user experience, helping users stay financially organized with ease.</p>          
-          <div class="external-link">
-  <a href=" " target="_blank" rel="noopener noreferrer">
-    <i class="fa-solid fa-up-right-from-square"></i>
-  </a>
-</div>
+      <figure class="portrait">
+        <img src="images/Sana_pic.jpeg" alt="Aameena Sana M">
+      </figure>
+    </section>
+
+    <section id="portfolio">
+      <h2>Featured projects</h2>
+      <div class="project-grid">
+        <article class="card">
+          <p class="eyebrow">Financial research</p>
+          <h3>FilingLens</h3>
+          <p class="stack">Java · Spring Boot · Next.js · TypeScript · PostgreSQL (pgvector) · Docker</p>
+          <p>A research platform for tracking public companies and comparing their 10-K, 10-Q, and 8-K filings across reporting periods.</p>
+          <ul>
+            <li>Built a filing Q&amp;A pipeline with Claude, verified citations, and keyword fallback for semantic search.</li>
+            <li>Designed a Spring Boot backend that monitors SEC EDGAR and sends notifications for companies on a watchlist.</li>
+            <li>Automated tests, secret scanning, and Docker builds with GitHub Actions.</li>
+          </ul>
+          <a class="project-link" href="https://github.com/aameenasana/FilingSec">FilingLens on GitHub</a>
+        </article>
+        <article class="card">
+          <p class="eyebrow">Distributed systems</p>
+          <h3>DistriSys</h3>
+          <p class="stack">Java 21 · gRPC · Protocol Buffers · Gradle · Docker · JUnit 5</p>
+          <p>A distributed object store that uses Reed–Solomon erasure coding to recover from the loss of any two shards per stripe.</p>
+          <ul>
+            <li>Built streaming uploads and downloads with idempotent retries, CRC32C checks, and crash-safe storage.</li>
+            <li>Built a metadata service and gateway with automatic node failure detection and shard repair.</li>
+            <li>Validated the cluster locally with Docker Compose and 50+ unit, integration, and fault-injection tests.</li>
+          </ul>
+          <a class="project-link" href="https://github.com/AameenaSana/DistriSys">DistriSys on GitHub</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="timeline">
+        <article>
+          <p class="date">Aug – Oct 2026</p>
+          <div>
+            <h3>SDE Summer Intern</h3>
+            <p class="byline">Siemens Digital Industries Software · On-site</p>
+            <p class="stack">Polarion ALM · Jenkins · Git · REST APIs · SQL</p>
+            <p>Integrated Polarion ALM with Jenkins and REST APIs to automate build tracking. Investigated defects through application logs, refactored reusable components, and tested software modules. Documented test cases, defects, and implementation details, including a narrated walkthrough for end users.</p>
+          </div>
+        </article>
+        <article>
+          <p class="date">Nov – Dec 2025</p>
+          <div>
+            <h3>Freelance Web Developer</h3>
+            <p class="byline">Client Portfolio Website · Remote</p>
+            <p class="stack">HTML · CSS · JavaScript · Vercel</p>
+            <p>Designed and built a responsive portfolio for an international client. Created the project showcase, deployed the site on Vercel, and provided post-delivery support.</p>
+            <a href="https://tabriz-portfolio.vercel.app/">View the client portfolio</a>
+          </div>
+        </article>
+        <article>
+          <p class="date">Oct 2025</p>
+          <div>
+            <h3>Frontend Developer</h3>
+            <p class="byline">amBITion Hackathon Website · Team of three</p>
+            <p class="stack">React · Vite · JavaScript · HTML · CSS · GitHub</p>
+            <p>Helped build, deploy, and maintain the official hackathon website, which handled 150+ team registrations. Developed responsive event and registration pages with payment gateway integration.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Technical skills</h2>
+      <dl class="skills-grid">
+        <div><dt>Languages</dt><dd>Java, JavaScript, TypeScript, Python, C++, SQL, HTML, CSS</dd></div>
+        <div><dt>Frameworks</dt><dd>Spring Boot, React, Next.js, Node.js, Express.js, Tailwind CSS</dd></div>
+        <div><dt>Databases</dt><dd>PostgreSQL (pgvector), MongoDB, MySQL, Supabase</dd></div>
+        <div><dt>DevOps &amp; tools</dt><dd>Docker, Jenkins, GitHub Actions, Git, Polarion ALM, Postman, Vercel, VS Code</dd></div>
+        <div><dt>AI</dt><dd>Claude API, retrieval-augmented generation (RAG), vector search</dd></div>
+        <div><dt>CS fundamentals</dt><dd>Data structures and algorithms, object-oriented programming, operating systems, computer networks, SDLC</dd></div>
+      </dl>
+    </section>
+
+    <section class="credentials" aria-label="Education, certifications, and leadership">
+      <div>
+        <h2>Education</h2>
+        <h3>Bangalore Institute of Technology</h3>
+        <p>B.E. in Computer Science and Engineering</p>
+        <p class="byline">Sep 2023 – Jul 2027 · GPA 8.61/10</p>
+        <h3>Certifications</h3>
+        <ul>
+          <li>Postman API Fundamentals Student Expert</li>
+          <li>Google Generative AI</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Leadership</h2>
+        <h3>Core Technical Member, amBITion Hackathon</h3>
+        <p>Served on the technical team for a hackathon with 700+ participants and 150+ project repositories.</p>
+        <h3>Core Member, Google Developer Groups on Campus</h3>
+        <p class="byline">Jan – Oct 2025</p>
+        <p>Ran a seven-day bootcamp covering AI, web development, blockchain, DevOps, Git, and Figma.</p>
+      </div>
+    </section>
+
+    <section id="repos">
+      <h2>GitHub activity</h2>
+      <a class="activity-link" href="https://github.com/AameenaSana">
+        <img class="github-activity" src="https://github-contributions-api.deno.dev/AameenaSana.svg" alt="Aameena Sana’s GitHub contributions" loading="lazy">
+        View my GitHub profile
+      </a>
+    </section>
+
+    <section class="contact" id="contact">
+      <div>
+        <h2>Get in touch</h2>
+        <a class="email" href="mailto:aameenasana.work05@gmail.com">aameenasana.work05@gmail.com</a>
+        <div class="actions">
+          <a class="button" href="https://www.linkedin.com/in/aameenasana/">LinkedIn</a>
+          <a class="button" href="https://github.com/AameenaSana">GitHub</a>
         </div>
       </div>
-      <div class="work">
-        <img src="images/work3.jpg">
-        <div class="layer">
-          <h3>Client Portfolio Website</h3>
-          <p>TThis project is a responsive portfolio website built using HTML, CSS, and JavaScript, with a modern layout designed through CSS Grid and Flexbox. It provided the client with a strong online presence to share with potential employers and collaborators. I connected with the client on LinkedIn, delivered the project six days ahead of the deadline, and earned rupees 5,000 for the work.</p>          
-          <div class="external-link">
-  <a href=" https://tabriz-portfolio.vercel.app/ " target="_blank" rel="noopener noreferrer">
-    <i class="fa-solid fa-up-right-from-square"></i>
-  </a>
-</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+      <form name="submit-to-google-sheet">
+        <label for="name">Name</label>
+        <input id="name" name="Name" autocomplete="name" required>
+        <label for="email">Email</label>
+        <input id="email" name="Email" type="email" autocomplete="email" required>
+        <label for="message">Message</label>
+        <textarea id="message" name="Message" rows="5" required></textarea>
+        <button class="button primary" type="submit">Send message</button>
+        <p id="msg" role="status"></p>
+      </form>
+    </section>
+  </main>
 
-
-
-
-<!----------------------------CONTACTS------------>
-<div id="contact">
-  <div class="container">
-    <div class="row">
-      <div class="contact-left">
-        <h1 class="sub-title">Contact Me</h1>
-        <p><i class="fa-solid fa-paper-plane"></i>aameenasana.work05@gmail.com</p>
-        <div class="social-icons">
-          <a href="https://www.linkedin.com/in/aameena-sana-m-3a4141290/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="https://github.com/AameenaSana" target="_blank"><i class="fa-brands fa-square-github"></i></a>
-        </div>
-        <a href="images/Aameena Sana CV.pdf" download class="btn btn2">Download CV</a>
-      </div>
-      <div class="contact-right">
-        <form name="submit-to-google-sheet">
-          <input type="text" name="Name" placeholder="Your Name" required>
-          <input type="email" name="Email" placeholder="Your Email" required>
-          <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-          <button type="submit" class="btn btn2">Submit</button>
-        </form>
-        <span id="msg"></span>
-      </div>
-    </div>
-  </div>
-</div>
-
+  <footer class="wrap footer">
+    <p>Aameena Sana M</p>
+    <p id="views-counter" hidden><span id="count"></span> page views</p>
+    <a href="#header">Back to top</a>
+  </footer>
 <script>
   const scriptURL = 'https://script.google.com/macros/s/AKfycbzFoJYDeHjHjXTXHeg86poffPov5R0OFpZlbtGMapCR1mwVhKMFdHbFrIvfrds65Pi-sQ/exec'
   const form = document.forms['submit-to-google-sheet']
@@ -218,14 +181,15 @@
     e.preventDefault()
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
       .then(response => {
-        msg.innerHTML= "Message sent successfully!"
+        if (!response.ok) throw new Error('Request failed');
+        msg.textContent = 'Message sent successfully.'
         setTimeout(function(){
           msg.innerHTML=""
 
         },5000)
         form.reset()
       })
-      .catch(error => console.error('Error!', error.message))
+      .catch(() => { msg.textContent = 'Message could not be sent. Please try again or contact me by email.' })
   })
 </script>
 <script type="module">
@@ -266,6 +230,7 @@
         await setDoc(docRef, { count: 1 });
         document.getElementById('count').textContent = 1;
       }
+      document.getElementById('views-counter').hidden = false;
     } catch (error) {
       console.error("Error updating counter:", error);
     }
@@ -274,6 +239,5 @@
 
   updateCounter();
 </script>
-<script src="script.js"></script>
 </body>
 </html>
