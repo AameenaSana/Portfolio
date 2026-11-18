@@ -76,5 +76,5 @@ loadContributions("images/github-contributions.json").then(renderContributions).
     .then(() => loadContributions("https://github-contributions-api.jogruber.de/v4/AameenaSana?y=last"))
     .then(renderContributions)
     .catch(() => {
-        // Keep the saved calendar or the GitHub profile link available.
+        // Keep the saved calendar visible if it loaded.
     });

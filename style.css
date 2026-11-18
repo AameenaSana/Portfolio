@@ -134,7 +134,6 @@ main > section + section { border-top: 1px solid var(--line); padding-block: cla
 .credentials, .contact { column-gap: clamp(1.25rem, 5vw, 5rem); }
 .credentials h3 { margin-bottom: .35rem; }
 .credentials p + h3 { margin-top: 1.2rem; }
-.activity-link { display: block; max-width: 50rem; }
 .contribution-card {
   padding: clamp(.8rem, 3vw, 1.4rem);
   margin-bottom: .75rem;
@@ -183,12 +182,12 @@ form button { justify-self: start; }
 .footer { border-top: 1px solid var(--line); color: var(--muted); }
 
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  :where(.card, .timeline article, .skills-grid > div, .credentials > div, .activity-link, .contact > div) {
+  :where(.card, .timeline article, .skills-grid > div, .credentials > div, .contribution-card, .contact > div) {
     border-radius: .75rem;
     transition: translate .2s ease, box-shadow .2s ease;
   }
 
-  :is(.card, .timeline article, .skills-grid > div, .credentials > div, .activity-link, .contact > div):hover {
+  :is(.card, .timeline article, .skills-grid > div, .credentials > div, .contribution-card, .contact > div):hover {
     translate: 0 -.35rem;
     box-shadow: 0 .6rem 1.5rem -.5rem rgb(0 0 0 / .28);
   }
