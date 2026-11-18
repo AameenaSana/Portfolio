@@ -38,7 +38,7 @@
         </div>
       </div>
       <figure class="portrait">
-        <img src="images/Sana_pic.jpeg" alt="Aameena Sana M">
+        <img src="images/sana_pic.png" alt="Aameena Sana M">
       </figure>
     </section>
 
@@ -142,10 +142,22 @@
 
     <section id="repos">
       <h2>GitHub activity</h2>
-      <a class="activity-link" href="https://github.com/AameenaSana">
-        <img class="github-activity" src="https://github-contributions-api.deno.dev/AameenaSana.svg" alt="Aameena Sana’s GitHub contributions" loading="lazy">
-        View my GitHub profile
-      </a>
+      <div class="contribution-card" id="github-calendar" hidden>
+        <p id="contribution-summary"></p>
+        <div class="contribution-scroll" tabindex="0" role="region" aria-label="Daily GitHub contribution calendar">
+          <div class="contribution-grid" role="img" aria-labelledby="contribution-summary"></div>
+        </div>
+        <div class="contribution-legend">
+          <span>Less</span>
+          <span class="contribution-day level-0" aria-hidden="true"></span>
+          <span class="contribution-day level-1" aria-hidden="true"></span>
+          <span class="contribution-day level-2" aria-hidden="true"></span>
+          <span class="contribution-day level-3" aria-hidden="true"></span>
+          <span class="contribution-day level-4" aria-hidden="true"></span>
+          <span>More</span>
+        </div>
+      </div>
+      <a class="activity-link" href="https://github.com/AameenaSana#year-list-container">View contributions on GitHub</a>
     </section>
 
     <section class="contact" id="contact">
