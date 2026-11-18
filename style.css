@@ -62,7 +62,7 @@ button, input, textarea { font: inherit; }
 .portrait img { aspect-ratio: 4 / 5; object-fit: cover; object-position: center 35%; }
 .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
 
-.button, #dark-mode-toggle {
+.button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -75,8 +75,41 @@ button, input, textarea { font: inherit; }
   text-decoration: none;
   cursor: pointer;
 }
-.button:hover, #dark-mode-toggle:hover { text-decoration: underline; }
+.button:hover { text-decoration: underline; }
 .primary { background: var(--accent); color: var(--button-text); }
+
+.theme-switch {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 2.25rem);
+  align-items: center;
+  min-height: 2.75rem;
+  padding: .2rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+}
+.theme-switch:hover { border-color: var(--accent); }
+.theme-switch::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: .2rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: var(--accent);
+  transition: transform .2s ease;
+}
+.theme-switch-icon { position: relative; font-size: 1.4rem; line-height: 1; text-align: center; }
+.theme-switch[aria-pressed="false"] .theme-switch-sun,
+.theme-switch[aria-pressed="true"] .theme-switch-moon { color: var(--button-text); }
+.theme-switch[aria-pressed="true"]::before { transform: translateX(2.25rem); }
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-switch::before { transition: none; }
+}
 
 main > section + section { border-top: 1px solid var(--line); padding-block: clamp(2.5rem, 6vw, 5rem); }
 .project-grid, .credentials, .contact { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
