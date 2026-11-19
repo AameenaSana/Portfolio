@@ -217,7 +217,6 @@
 
   <footer class="wrap footer">
     <p>Aameena Sana M</p>
-    <p id="views-counter" hidden><span id="count"></span> page views</p>
     <a href="#header">Back to top</a>
   </footer>
 <script>
@@ -239,53 +238,6 @@
       })
       .catch(() => { msg.textContent = 'Message could not be sent. Please try again or contact me by email.' })
   })
-</script>
-<script type="module">
-  // Import Firebase modules
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-  import { getFirestore, doc, getDoc, setDoc, updateDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-
-  // Firebase Configuration
-  const firebaseConfig = {
-  apiKey: "AIzaSyAHTdhSeCcG6hgZqUNdbcpCLpE7H-X7v84",
-  authDomain: "sana-views.firebaseapp.com",
-  projectId: "sana-views",
-  storageBucket: "sana-views.firebasestorage.app",
-  messagingSenderId: "430350978640",
-  appId: "1:430350978640:web:a43eff69a0d5a9a93d4b55"
-};
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-
-  // Function to update and display the view count
-  async function updateCounter() {
-    const docRef = doc(db, "views", "counter"); // Firestore document reference
-
-    try {
-      const docSnap = await getDoc(docRef);
-
-      if (docSnap.exists()) {
-        let currentCount = docSnap.data().count || 0;
-
-        // Increment the count
-        await updateDoc(docRef, { count: currentCount + 1 });
-
-        // Update the UI
-        document.getElementById('count').textContent = currentCount + 1;
-      } else {
-        // Create the document if it doesn't exist
-        await setDoc(docRef, { count: 1 });
-        document.getElementById('count').textContent = 1;
-      }
-      document.getElementById('views-counter').hidden = false;
-    } catch (error) {
-      console.error("Error updating counter:", error);
-    }
-  }
-
-
-  updateCounter();
 </script>
 </body>
 </html>
