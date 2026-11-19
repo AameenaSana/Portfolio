@@ -175,6 +175,7 @@ main > section + section { border-top: 1px solid var(--line); padding-block: cla
 }
 .contact-links a:hover { border-color: var(--accent); }
 .contact-links svg { width: 1.65rem; height: 1.65rem; }
+.contact-note { max-width: 38ch; margin-top: 1.25rem; color: var(--muted); }
 form { display: grid; gap: .4rem; }
 form input, form textarea { width: 100%; margin-bottom: .55rem; padding: .65rem .75rem; border: 1px solid var(--line); border-radius: .5rem; background: var(--surface); color: var(--ink); }
 form textarea { resize: vertical; }
