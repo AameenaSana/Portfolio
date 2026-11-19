@@ -58,6 +58,7 @@ button, input, textarea { font: inherit; }
 .hero h1 { font-size: clamp(3.9rem, 10vw, 8.25rem); line-height: .89; margin-block: .8rem 1.4rem; }
 .eyebrow { color: var(--accent); font-size: .875rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
 .intro { color: var(--muted); font-size: 1.125rem; max-width: 42ch; }
+.intro + .intro { margin-top: .85rem; }
 .portrait { border: 1px solid var(--line); border-radius: 1.25rem; overflow: hidden; }
 .portrait img { aspect-ratio: 4 / 5; object-fit: cover; object-position: center 65%; }
 .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
