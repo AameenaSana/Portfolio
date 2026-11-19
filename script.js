@@ -6,9 +6,9 @@ function applyTheme(isDark) {
 }
 
 try {
-    applyTheme(localStorage.getItem("theme") !== "light");
+    applyTheme(localStorage.getItem("theme") === "dark");
 } catch {
-    applyTheme(true);
+    applyTheme(false);
 }
 
 toggleButton.hidden = false;
